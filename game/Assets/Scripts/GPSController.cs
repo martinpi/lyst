@@ -58,6 +58,11 @@ public class GPSController : MonoBehaviour {
 		StartCoroutine(CheckActive());
 		DistancesRaw = new float[6];
 		Distances = new float[6];
+
+		for (int i=0; i<DistancesRaw.Length; ++i) {
+			Distances[i] = DistancesRaw[i] = 1000f;
+		}
+
 	}
 
 	float meterDistance(Vector2 origin, Vector2 point) {
@@ -106,10 +111,11 @@ public class GPSController : MonoBehaviour {
 			Vector2 pos = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
 			Vector2 p0 = new Vector2(60.79379f, 11.03634f); // start
 			Vector2 p1 = new Vector2(60.7929f, 11.03643f);  // stage
-			Vector2 p2 = new Vector2(60.79295f, 11.03518f); // high clearing
-			Vector2 p3 = new Vector2(60.79208f, 11.03382f); // High cliff by lake
-			Vector2 p4 = new Vector2(60.79152f, 11.03595f); // Small cliff by lake
+			Vector2 p2 = new Vector2(60.79288f, 11.03505f);  // bonfire
+			Vector2 p3 = new Vector2(60.79292f, 11.03557f); // high clearing
+			Vector2 p4 = new Vector2(60.79208f, 11.03382f); // High cliff by lake
 			Vector2 p5 = new Vector2(60.7925f, 11.03627f);  // Trees
+			//			Vector2 p4 = new Vector2(60.79152f, 11.03595f); // Small cliff by lake
 
 			DistancesRaw[0] = meterDistance(pos, p0);
 			DistancesRaw[1] = meterDistance(pos, p1);
@@ -122,6 +128,13 @@ public class GPSController : MonoBehaviour {
 				Distances[i] = Distances[i] * 0.9f + DistancesRaw[i] * 0.1f;
 			}
 
+			AppCommander.Instance.SetDistance(Location.START, Distances[0]);
+			AppCommander.Instance.SetDistance(Location.STAGE, Distances[1]);
+			AppCommander.Instance.SetDistance(Location.SEAFRONT, Distances[2]);
+			AppCommander.Instance.SetDistance(Location.HIGH_CLEARING, Distances[3]);
+			AppCommander.Instance.SetDistance(Location.HIGH_CLIFF, Distances[4]);
+			AppCommander.Instance.SetDistance(Location.TREES, Distances[5]);
+
 			float latM = 111412.0f;
 			float lonM = 108553.3f;
 
@@ -133,7 +146,7 @@ public class GPSController : MonoBehaviour {
 
 			string distances = "";
 			for (int i=0; i<DistancesRaw.Length; ++i) {
-				distances += "S"+i+" "+Distances[i];
+				distances += "\nS"+i+" "+Distances[i];
 			}
 
 			DebugLog.text = 
