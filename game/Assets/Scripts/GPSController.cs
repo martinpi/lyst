@@ -146,7 +146,7 @@ public class GPSController : MonoBehaviour {
 
 			string distances = "";
 			for (int i=0; i<DistancesRaw.Length; ++i) {
-				distances += "\nS"+i+" "+Distances[i];
+				distances += "\n"+i+" -- "+Distances[i];
 			}
 
 			DebugLog.text = 
