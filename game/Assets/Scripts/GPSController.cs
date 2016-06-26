@@ -8,8 +8,17 @@ public class GPSController : MonoBehaviour {
 //	public Transform Player = null;
 	public float[] Distances;
 	public float[] DistancesRaw;
+	public Button StartButton = null;
 
 	private bool _active = false;
+	private bool _playing = false;
+
+	Vector2 p0 = new Vector2(60.79379f, 11.03634f); // start
+	Vector2 p1 = new Vector2(60.7929f, 11.03643f);  // stage
+	Vector2 p2 = new Vector2(60.79288f, 11.03505f);  // bonfire
+	Vector2 p3 = new Vector2(60.79292f, 11.03557f); // high clearing
+	Vector2 p4 = new Vector2(60.79208f, 11.03382f); // High cliff by lake
+	Vector2 p5 = new Vector2(60.7925f, 11.03627f);  // Trees
 
 	IEnumerator CheckActive() {
 		// First, check if user has location service enabled
@@ -103,18 +112,14 @@ public class GPSController : MonoBehaviour {
 			return;
 		}
 
+		if (!_playing) return;
+
 		if (Input.location.status == LocationServiceStatus.Failed) {
 			DebugLog.text = "Unable to determine device location";
 
 		} else {
 			
 			Vector2 pos = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
-			Vector2 p0 = new Vector2(60.79379f, 11.03634f); // start
-			Vector2 p1 = new Vector2(60.7929f, 11.03643f);  // stage
-			Vector2 p2 = new Vector2(60.79288f, 11.03505f);  // bonfire
-			Vector2 p3 = new Vector2(60.79292f, 11.03557f); // high clearing
-			Vector2 p4 = new Vector2(60.79208f, 11.03382f); // High cliff by lake
-			Vector2 p5 = new Vector2(60.7925f, 11.03627f);  // Trees
 			//			Vector2 p4 = new Vector2(60.79152f, 11.03595f); // Small cliff by lake
 
 			DistancesRaw[0] = meterDistance(pos, p0);
@@ -153,10 +158,19 @@ public class GPSController : MonoBehaviour {
 				Input.location.lastData.latitude + " / " + Input.location.lastData.longitude + "\n\n" +
 				distances;
 		
-//			Player.transform.position = new Vector3 (x, z, 0f);
 		}
+	}
 
-//		Player.rotation = Quaternion.Euler(0, 0, Input.compass.trueHeading);
+	public void StartGame() {
+		if (!_active) return;
+
+		StartButton.interactable = false;
+		StartButton.gameObject.SetActive(false);
+
+		p0 = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
+
+		_playing = true;
+
 
 	}
 }

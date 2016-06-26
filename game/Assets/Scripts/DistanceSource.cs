@@ -96,33 +96,57 @@ public class DistanceSource : MonoBehaviour {
 		return distance;
 	}
 
+
+	bool messageStarted;
 	void CheckDistanceToListener()
 	{
 		if (Vector3.Distance(transform.position,listener.transform.position) < radius)
 		{
 			inRadius = true;
 			StopThisSource();
+
 			if(!jingle.isPlaying)
 			{
+				if (!message.isPlaying && ! solved)
+				{
+					message.PlayDelayed(timeBeforeMessage, 0.5f);
+					messageStarted = true;
+				}
 				jingle.Play(0.1f);
 				StopAllOtherLocations();
 				//FOR NOW
 				solved = true;
+			}
+			if (messageStarted)
+			{
+				if(!message.isPlaying)
+				{
+					Invoke("WaitAfterSolved",timeAfterMessage);
+				
+				}
 			}
 
 		}
 		if (Vector3.Distance(transform.position,listener.transform.position) > radius)
 		{
 			if(!inRadius) return;
-			if (jingle.isPlaying)
+		/*	if (jingle.isPlaying)
 			{
 				jingle.Stop(1.5f);
 				StartAllOtherLocations();
 				inRadius = false;
-			}
+			}*/
 		}
 	}
 		
+	void WaitAfterSolved()
+	{
+		if (jingle.isPlaying)
+		{
+			jingle.Stop(4.5f);
+			StartAllOtherLocations();
+		}
+	}
 
 
 	void StopAllOtherLocations()
@@ -145,6 +169,11 @@ public class DistanceSource : MonoBehaviour {
 				item.StartThisSource();
 		}
 	}
+
+	//if !solved wat x before plazing recording
+	//wait x after plazing recording
+	//mark soilved, enable all others
+
 
 	void UpdateVolume()
 	{

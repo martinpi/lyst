@@ -38,6 +38,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011135288972}
   - 82: {fileID: 82000012695703482}
+  - 169: {fileID: 169000011517409964}
+  - 114: {fileID: 114000010128907442}
   m_Layer: 0
   m_Name: Message
   m_TagString: Untagged
@@ -69,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013639468532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200, y: 0, z: 0}
+  m_LocalPosition: {x: 100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000011135288972}
@@ -185,9 +187,10 @@ AudioSource:
   m_GameObject: {fileID: 1000012822656270}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  OutputAudioMixerGroup: {fileID: 243000013433079552, guid: 9fa6e155da72e4cc5bebd1a530a2e30e,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 15725278a6f5d494da8639ebd628cd9e, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -325,6 +328,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000010128907442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822656270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03efd819e1f424011bae4f49569bc6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010150469014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,14 +351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   location: 1
-  startPulseTime: 6
-  endPulseTime: 0.1
-  pulseCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   volumeCurve:
     serializedVersion: 2
     m_Curve:
@@ -361,11 +367,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  startPulseTime: 6
+  endPulseTime: 0.1
   radius: 10
-  timeBeforeMessage: 15
-  timeAfterMessage: 90
+  timeBeforeMessage: 3
+  timeAfterMessage: 7
   messageClip: {fileID: 0}
-  message: {fileID: 0}
+  message: {fileID: 114000010128907442}
   jingle: {fileID: 114000010855581092}
   clip:
   - {fileID: 8300000, guid: aeaa7bc539d6348e1b3351f9aee7e659, type: 3}
@@ -384,6 +392,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03efd819e1f424011bae4f49569bc6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!169 &169000011517409964
+AudioLowPassFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822656270}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!169 &169000014074316038
 AudioLowPassFilter:
   m_ObjectHideFlags: 1
