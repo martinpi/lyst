@@ -97,16 +97,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4000011636674742, guid: 5533334c066a343229124a5d32fc1066, type: 2}
       propertyPath: m_LocalPosition.x
       value: -180
@@ -139,51 +129,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].value
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5533334c066a343229124a5d32fc1066, type: 2}
   m_IsPrefabParent: 0
@@ -197,7 +142,7 @@ Prefab:
     - target: {fileID: 114000010306350902, guid: e6d13fd06530148a092f40ecbdbb7611,
         type: 2}
       propertyPath: locations.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4000013446843232, guid: e6d13fd06530148a092f40ecbdbb7611, type: 2}
       propertyPath: m_LocalPosition.x
@@ -235,15 +180,31 @@ Prefab:
         type: 2}
       propertyPath: locations.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1802355755}
     - target: {fileID: 114000010306350902, guid: e6d13fd06530148a092f40ecbdbb7611,
         type: 2}
       propertyPath: locations.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 463380945}
+    - target: {fileID: 114000010306350902, guid: e6d13fd06530148a092f40ecbdbb7611,
+        type: 2}
+      propertyPath: locations.Array.data[2]
+      value: 
+      objectReference: {fileID: 1891802547}
+    - target: {fileID: 114000010306350902, guid: e6d13fd06530148a092f40ecbdbb7611,
+        type: 2}
+      propertyPath: locations.Array.data[3]
+      value: 
+      objectReference: {fileID: 2047213593}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6d13fd06530148a092f40ecbdbb7611, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &463380945 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1299307129}
+  m_Script: {fileID: 11500000, guid: 5357d733a054b41e28aa1c92adeca599, type: 3}
 --- !u!1001 &736030798
 Prefab:
   m_ObjectHideFlags: 0
@@ -282,10 +243,6 @@ Prefab:
     - target: {fileID: 4000011486580526, guid: 58c75f1943ae84662b9c24be93826b28, type: 2}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012714971870, guid: 58c75f1943ae84662b9c24be93826b28, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58c75f1943ae84662b9c24be93826b28, type: 2}
@@ -502,16 +459,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4000011631665832, guid: 7733615eb58094d8a87d500a78754bf5, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -543,51 +490,6 @@ Prefab:
     - target: {fileID: 4000011631665832, guid: 7733615eb58094d8a87d500a78754bf5, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].value
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014092763600, guid: 7733615eb58094d8a87d500a78754bf5,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].outSlope
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7733615eb58094d8a87d500a78754bf5, type: 2}
@@ -801,6 +703,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1802355754
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014122533946, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8897cc47db7f54420bd0bd4451f83b8d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!114 &1802355755 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010085139922, guid: 8897cc47db7f54420bd0bd4451f83b8d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1802355754}
+  m_Script: {fileID: 11500000, guid: 5357d733a054b41e28aa1c92adeca599, type: 3}
 --- !u!1 &1835389803
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +825,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1835389803}
+--- !u!114 &1891802547 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012795062762, guid: 5533334c066a343229124a5d32fc1066,
+    type: 2}
+  m_PrefabInternal: {fileID: 60514369}
+  m_Script: {fileID: 11500000, guid: 5357d733a054b41e28aa1c92adeca599, type: 3}
 --- !u!1 &1947160983
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,16 +932,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4000010275521558, guid: f4a6bc41de2ec42ba8277151f5519a26, type: 2}
       propertyPath: m_LocalPosition.x
       value: 150
@@ -1018,51 +964,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].value
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: pulseCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
-        type: 2}
-      propertyPath: volumeCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4a6bc41de2ec42ba8277151f5519a26, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2047213593 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010150469014, guid: f4a6bc41de2ec42ba8277151f5519a26,
+    type: 2}
+  m_PrefabInternal: {fileID: 1986268704}
+  m_Script: {fileID: 11500000, guid: 5357d733a054b41e28aa1c92adeca599, type: 3}
