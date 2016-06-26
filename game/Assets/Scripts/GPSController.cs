@@ -5,7 +5,7 @@ using System.Collections;
 public class GPSController : MonoBehaviour {
 
 	public Text DebugLog = null;
-	public Transform Player = null;
+//	public Transform Player = null;
 	public float[] Distances;
 	public float[] DistancesRaw;
 
@@ -153,10 +153,10 @@ public class GPSController : MonoBehaviour {
 				"LOCd " + Input.location.lastData.latitude + " / " + Input.location.lastData.longitude + 
 				"\nLOCm " + x + " / " + z + "\n" + distances;
 		
-			Player.transform.position = new Vector3 (x, z, 0f);
+//			Player.transform.position = new Vector3 (x, z, 0f);
 		}
 
-		Player.rotation = Quaternion.Euler(0, 0, Input.compass.trueHeading);
+//		Player.rotation = Quaternion.Euler(0, 0, Input.compass.trueHeading);
 
 	}
 }
