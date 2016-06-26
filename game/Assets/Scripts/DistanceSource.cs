@@ -12,8 +12,13 @@ public class DistanceSource : MonoBehaviour {
 
 	public Location location;
 
+
 	public float startPulseTime;
 	public float endPulseTime;
+
+	public AnimationCurve pulseCurve;
+	public AnimationCurve volumeCurve;
+
 
 	public float radius = 5;
 	public float timeBeforeMessage = 15;
@@ -33,6 +38,13 @@ public class DistanceSource : MonoBehaviour {
 	AudioSource s;
 	bool inRadius;
 	AudioListener listener;
+
+	void OnEnable()
+	{
+		pulseCurve = ATAnimationCurves.ATEaseIn(0,endPulseTime,1,startPulseTime);
+		volumeCurve = ATAnimationCurves.ATEaseIn(0,0,1,1);
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -58,8 +70,9 @@ public class DistanceSource : MonoBehaviour {
 		//distance between listener and spot 
 		// mapped from minDistance to maxdistance of the curves
 		// mapßped to min
-		var currentPulseTime = DistanceToListener().ATScaleRange(s.maxDistance,s.minDistance,startPulseTime,endPulseTime);
-		return currentPulseTime;
+		var currentPulseTime = DistanceToListener().ATScaleRange(s.maxDistance,s.minDistance,1,0);
+		var evaluatedPulseTime = pulseCurve.Evaluate(currentPulseTime);
+		return evaluatedPulseTime;
 			
 	}
 
@@ -68,7 +81,7 @@ public class DistanceSource : MonoBehaviour {
 		//distance between listener and spot 
 		// mapped from minDistance to maxdistance of the curves
 		// mapßped to min
-		var currentVolume = DistanceToListener().ATScaleRange(s.maxDistance,s.minDistance,0,1);
+		var currentVolume = volumeCurve.Evaluate(DistanceToListener().ATScaleRange(s.maxDistance,s.minDistance,0,1));
 		return currentVolume;
 
 	}
@@ -102,7 +115,10 @@ public class DistanceSource : MonoBehaviour {
 			StopThisSource();
 			if(!jingle.isPlaying)
 			{
-				jingle.Play(0.1f);
+				if(location == Location.START)
+					jingle.Play(1.2f);
+				else
+					jingle.Play(0.01f);
 				StopAllOtherLocations();
 				//FOR NOW
 				solved = true;

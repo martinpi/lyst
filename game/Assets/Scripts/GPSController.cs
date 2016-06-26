@@ -150,8 +150,8 @@ public class GPSController : MonoBehaviour {
 			}
 
 			DebugLog.text = 
-				"LOCd " + Input.location.lastData.latitude + " / " + Input.location.lastData.longitude + 
-				"\nLOCm " + x + " / " + z + "\n" + distances;
+				Input.location.lastData.latitude + " / " + Input.location.lastData.longitude + "\n\n" +
+				distances;
 		
 //			Player.transform.position = new Vector3 (x, z, 0f);
 		}
