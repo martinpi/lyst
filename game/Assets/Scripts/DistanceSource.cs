@@ -43,7 +43,8 @@ public class DistanceSource : MonoBehaviour {
 		listener = FindObjectOfType<AudioListener>();
 		s.outputAudioMixerGroup = mixerGroup;
 		jingle.outputAudioMixerGroup = mixerGroup;
-		StartThisSource();
+		if (location == Location.START || location == Location.STAGE)
+			StartThisSource();
 	}
 
 	IEnumerator Pulse()
@@ -166,7 +167,15 @@ public class DistanceSource : MonoBehaviour {
 			if (item.isPulsing || item.solved)
 				continue;
 			if (item != this)
-				item.StartThisSource();
+			{
+				if(location == Location.START && item.location == Location.STAGE)
+					item.StartThisSource();
+				if(location == Location.STAGE && item.location == Location.SEAFRONT)
+					item.StartThisSource();
+				if(location == Location.SEAFRONT && item.location == Location.HIGH_CLIFF)
+					item.StartThisSource();
+					
+			}
 		}
 	}
 
